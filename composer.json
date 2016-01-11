@@ -1,0 +1,14 @@
+{
+    "name": "alexmbello1984/learning-laravel",
+    "description": "This project is created to go step by step understanding the basic operation of laravel",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "alexmbello",
+            "email": "alexmbello1984@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
