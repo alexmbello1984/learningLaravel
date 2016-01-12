@@ -71,3 +71,20 @@ This project is created to go step by step understanding the basic operation of 
     y que generará una instancia asi vista en un var_dump:
     object(PlatziPHP\User)[2]
     public 'id' => string '' (length=0)
+
+4. Configuracion de Pruebas unitarias con phunit
+   agregar la dependencia al composer.json en las dependencias de desarrollo, NO en las de produccion.
+   
+   $ php composer.phar require phpunit/phpunit --dev
+   esto agregará la dependecia de phpunit al composer json y descargará el componente phpunit/phpunit
+
+   Se escribe la clase y el caso de prueba de la clase
+   y se ejecuta con el comando:
+   $ php  ./vendor/phpunit/phpunit/phpunit tests
+   
+   la funcion de prueba podria llamarse testX y seria reconocida por phpunit como un caso de prueba, o podria llamarse X y para que phpunit lo reconozca como una prueba a ejecutar debe tener la anotacion /** @test */
+
+   $ php  ./vendor/phpunit/phpunit/phpunit tests
+     PHPUnit 4.8.21 by Sebastian Bergmann and contributors.
+     Time: 1.13 seconds, Memory: 5.00Mb
+     OK (2 tests, 2 assertions)
