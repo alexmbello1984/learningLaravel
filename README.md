@@ -34,9 +34,40 @@ This project is created to go step by step understanding the basic operation of 
                 "email": "alexmbello1984@gmail.com"
             }
          ],
-         "minimum-stability": "stable",
+         "minimum- ": "stable",
          "require": {}
      }
 
      Do you confirm generation [yes]? yes
      Would you like the vendor directory added to your .gitignore [yes]? no
+3. configurando el Autoload de las clases con PSR-4
+    Se configura el composer.json para usar el autoload PSR-4
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PlatziPHP\\": "src/"
+        }
+    }
+    
+    Se ejecuta 
+    $ php composer.phar install 
+    que generará el archivo de autoload "Generating autoload files" y que para usar habrá que incluir asi:
+
+    require_once __DIR__ . './vendor/autoload.php';
+    $user = new \PlatziPHP\User();
+
+    Si se quiere evitar tener que usar tanto el namespace en la instanciacion de la clase se le indica a php que en ese contexto se va a usar User del namespace \PlatziPHP\User
+
+    require_once __DIR__ . './vendor/autoload.php';
+    use \PlatziPHP\User;
+    $user = new User();
+    
+    o con un alias
+
+    require_once __DIR__ . './vendor/autoload.php';
+    use \PlatziPHP\User as User;
+    $user = new User();
+    
+    y que generará una instancia asi vista en un var_dump:
+    object(PlatziPHP\User)[2]
+    public 'id' => string '' (length=0)
