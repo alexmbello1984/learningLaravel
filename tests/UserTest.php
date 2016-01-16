@@ -4,7 +4,7 @@
 class UserTest extends PHPUnit_Framework_TestCase 
 {
     /** @test */
-    public function is_should_be_able_to_construct()
+    public function it_should_be_able_to_construct()
     {
         $user = new \PlatziPHP\User('fake@email.dev', '123456');
         $this->assertInstanceOf(\PlatziPHP\User::class, $user);
@@ -16,4 +16,5 @@ class UserTest extends PHPUnit_Framework_TestCase
         $user->setName('alexander', 'montaña');
         $this->assertEquals("alexander", $user->getFirstName());
     }
+    
 }

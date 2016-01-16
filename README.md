@@ -88,3 +88,4 @@ This project is created to go step by step understanding the basic operation of 
      PHPUnit 4.8.21 by Sebastian Bergmann and contributors.
      Time: 1.13 seconds, Memory: 5.00Mb
      OK (2 tests, 2 assertions)
+4.1 Se escriben los modelos Autor y sus casos de prueba, el modelo Post y sus casos de prueba.
