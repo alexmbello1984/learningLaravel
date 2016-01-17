@@ -10,7 +10,9 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "Illuminate/Http": "^5.2"
+    },
     "autoload": {
         "psr-4": {
             "PlatziPHP\\": "src/"

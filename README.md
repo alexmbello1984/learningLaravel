@@ -138,3 +138,27 @@ This project is created to go step by step understanding the basic operation of 
     <li><b>inmutables:</b> No cambian su valor, cuando es necesario se crean nuevos 
          objetos.</li>
    </ul>
+
+<h2> Iniciando PHP para la WEB </h2>
+<p>Implementar PHP en la web, Arquitectura de la web como se comunican cliente y 
+servidor, patron modelo vista controlador y el patron collections(fuera del contexto web)</p>
+
+6. <b>Modelo vista Controlador</b>
+Se escribira el controlador que mediará entre un request, el que sabe que hacer(dominio)
+y quien sabe como mostrar el resultado(vista)
+
+instalamos Ulliminate/Http con el comando <b>$ php composer.phar require Illuminate/Http</b> 
+para utilizar Request y Response
+
+Creamos carpeta Http para crear todos los objetos de la web y separar a traves de un 
+namespace distinto para las cosas de la web separadas en el namespace de Dominio.
+
+6.1 Se crea un controlador HomeController y se verifica que funcione, se crea el request 
+ y se pasa el request al controlador, y se imprime un valor del request.   
+
+
+
+
+
+
+
