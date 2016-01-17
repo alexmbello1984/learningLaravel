@@ -73,19 +73,68 @@ This project is created to go step by step understanding the basic operation of 
     public 'id' => string '' (length=0)
 
 4. Configuracion de Pruebas unitarias con phunit
-   agregar la dependencia al composer.json en las dependencias de desarrollo, NO en las de produccion.
+   agregar la dependencia al composer.json en las dependencias de desarrollo, NO 
+   en las de produccion.
    
    $ php composer.phar require phpunit/phpunit --dev
-   esto agregará la dependecia de phpunit al composer json y descargará el componente phpunit/phpunit
+   esto agregará la dependecia de phpunit al composer json y descargará el 
+   componente phpunit/phpunit
 
    Se escribe la clase y el caso de prueba de la clase
    y se ejecuta con el comando:
    $ php  ./vendor/phpunit/phpunit/phpunit tests
    
-   la funcion de prueba podria llamarse testX y seria reconocida por phpunit como un caso de prueba, o podria llamarse X y para que phpunit lo reconozca como una prueba a ejecutar debe tener la anotacion /** @test */
+   la funcion de prueba podria llamarse testX y seria reconocida por phpunit como 
+   un caso de prueba, o podria llamarse X y para que phpunit lo reconozca como 
+   una prueba a ejecutar debe tener la anotacion /** @test */
 
    $ php  ./vendor/phpunit/phpunit/phpunit tests
      PHPUnit 4.8.21 by Sebastian Bergmann and contributors.
      Time: 1.13 seconds, Memory: 5.00Mb
      OK (2 tests, 2 assertions)
 4.1 Se escriben los modelos Autor y sus casos de prueba, el modelo Post y sus casos de prueba.
+5. <p>Creando el objeto de valor Email ya no es del patron Entidad sino que la 
+   identidad la da el valor que tiene, hasta aqui tenemos:</p>
+   <ul> 
+    <li><b>Objetos:</b> los objetos tienen un estado, mensajes(definen el comportamiento)</li> 
+    <li><b>Mensajes:</b>  comportamiento, funciones</li>
+    <li><b>Colaboracion:</b> hay colaboracion entre objetos como entre el Post y 
+        el Autor del post, el post internamente usaba el autor en colaboración</li>
+    <li><b>Herencia:</b> El Autor es hijo de Usuario</li>
+    <li><b>Responsabilidad:</b> el objeto a traves de su comportamiento define 
+        para si una unica responsabilidad </li>
+   </ul>
+   
+   <ul> 
+    <li><b>Composer:</b></li>
+    <li><b>Dependencias:</b> instalacion y actualizacion de dependencias 
+         componentes</li>
+    <li><b>Autoloading:</b> usamos un estandar de autoloading el PSR-4</li>
+   </ul>
+
+   <ul> 
+    <li><b>Testing:</b> cumpliendo los tres pasos de testing: 1- preparar el entorno, 
+       2- ejecutar y 3- Comprobar</li>
+    <li><b>Definicion:</b> es preparar el entorno, crear los objetos necesarios, etc</li>
+    <li><b>Comprobacion:</b> Ejecutar la accion a validar, llamar el mensaje</li>
+    <li><b>Mantenimiento:</b> algunas veces tenemos que cambiar los tests ya que 
+        las clases pueden ir cambiando</li>
+   </ul>
+
+   <ul> 
+    <li><b>Entidades:</b> Patron de diseño en el que se modelan las clases 
+          son parte del problema que estamos solucionando</li>
+    <li><b>Identidad:</b> tienen identidad independiente de su estado</li>
+    <li><b>Modelo del Problema:</b> hacen parte del modelo del problema</li>
+   </ul>
+
+   <ul> 
+    <li><b>Objetos de valor:</b> es otro patron de diseño son objetos que no son
+         Entidades, son objetos que quizas antes eran tipos basicos y no tenian
+         tanta importancia antes a la hora de hablar del problema como las entidades 
+         pero son cosas necesarias de modelar para el proyecto.</li>
+    <li><b>id <=> estado:</b> la identidad la da el estado, si cambia el valor 
+         el objeto estara representando otra entidad ejemplo el Email </li>
+    <li><b>inmutables:</b> No cambian su valor, cuando es necesario se crean nuevos 
+         objetos.</li>
+   </ul>
